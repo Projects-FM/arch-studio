@@ -3,7 +3,7 @@ import { Footer, Navbar } from '../components';
 
 export const Layout = () => {
 	return (
-		<div>
+		<div className='max-w-[1110px] m-auto'>
 			<Navbar />
 			<Outlet />
 			<Footer />
