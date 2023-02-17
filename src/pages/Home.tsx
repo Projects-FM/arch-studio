@@ -1,3 +1,9 @@
+import { HangDown } from '../components';
+
 export const Home = () => {
-	return <div className='text-red'>Home</div>;
+	return (
+		<div>
+			<HangDown pageName='Home' />
+		</div>
+	);
 };
