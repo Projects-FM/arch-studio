@@ -33,8 +33,8 @@ export const Navbar = () => {
 				className={`
 				${isMenuOpen ? 'block' : 'hidden'}
 				bg-very-light-gray text-black font-bold p-12
-				absolute w-full top-[95px] flex flex-col gap-7
-				text-lg md:hidden
+				absolute w-full top-[103px] flex flex-col gap-7
+				text-lg md:hidden z-10
 			`}>
 				<li onClick={toggleMenu} className='cursor-pointer'>
 					<Link to='portfolio'>Portfolio</Link>

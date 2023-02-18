@@ -5,7 +5,9 @@ export const Layout = () => {
 	return (
 		<div className='max-w-[1110px] m-auto relative'>
 			<Navbar />
-			<Outlet />
+			<div className='md:mx-20 lg:mx-0'>
+				<Outlet />
+			</div>
 			<Footer />
 		</div>
 	);

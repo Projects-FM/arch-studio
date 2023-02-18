@@ -7,3 +7,42 @@
     font-family: 'Spartan', sans-serif;
   }
 }
+
+/* Custom Pagination */
+.swiper-pagination {
+  position: absolute;
+  display: none;
+  bottom: 0 !important;
+}
+
+@media (min-width: 992px){
+  .swiper-pagination {
+    display: flex;
+  }
+}
+
+.swiper-pagination-bullet {
+  padding: 5px 10px;
+  margin: 0 !important;
+  border-radius: 0;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  line-height: 30px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  color: #60636c;
+  opacity: 1;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+}
+
+.swiper-pagination-bullet-active {
+  color: #fff;
+  background: #000000;
+  /* transition: 3s ease-in; */
+}
