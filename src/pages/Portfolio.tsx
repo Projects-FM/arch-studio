@@ -1,5 +1,15 @@
-import React from 'react';
+import { HangDown, PortfolioCard } from '../components';
+import { projects } from '../utils/constants';
 
 export const Portfolio = () => {
-	return <div>Portfolio</div>;
+	return (
+		<div>
+			<HangDown pageName='Portfolio' />
+			<main className='grid gap-8 lg:grid-cols-3 p-8 md:p-0'>
+				{projects.map(project => (
+					<PortfolioCard key={project.id} {...project} />
+				))}
+			</main>
+		</div>
+	);
 };
