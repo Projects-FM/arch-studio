@@ -18,7 +18,11 @@ export const Navbar = () => {
 			md:py-14 md:px-20 md:gap-[6rem] md:justify-start
 			lg:py-14 xl:px-0
 		'>
-			<button onClick={toggleMenu}>
+			<button
+				onClick={() => {
+					if (!isMenuOpen) return;
+					toggleMenu();
+				}}>
 				<Link to='/'>
 					<img src={logo} alt='Logo' />
 				</Link>
