@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Carousel, HangDown } from '../components';
+import { Carousel, HangDown, PortfolioCard } from '../components';
 import arrowIcon from '../assets/icons/icon-arrow.svg';
 
 export const Home = () => {
@@ -91,6 +91,54 @@ export const Home = () => {
 						</button>
 					</Link>
 				</div>
+			</section>
+
+			<section className='px-12 md:p-0'>
+				<nav className='flex justify-between items-center mt-5 mb-10 md:mb-[5rem] md:mt-[10rem]'>
+					<h3
+						className='font-bold text-black-custom text-[40px] tracking-[-1.4px]
+						md:text-[56px] md:tracking-[-2px]
+					'>
+						Featured
+					</h3>
+					<Link to='portfolio'>
+						<button
+							className='
+							bg-black-custom text-[white] hidden md:flex gap-4 items-center py-6 font-medium
+							hover:bg-gray transition duration-1000 justify-center text-[15px] px-10
+							'>
+							See All
+							<img src={arrowIcon} alt='Arrow icon' />
+						</button>
+					</Link>
+				</nav>
+				<div className='grid lg:grid-cols-3 gap-8'>
+					<PortfolioCard
+						projectName='Project del Sol'
+						projectNumber={1}
+						image='del-sol'
+					/>
+					<PortfolioCard
+						projectName='228B Tower'
+						projectNumber={2}
+						image='228b'
+					/>
+					<PortfolioCard
+						projectName='Le Prototype'
+						projectNumber={3}
+						image='prototype'
+					/>
+				</div>
+				<Link to='portfolio'>
+					<button
+						className='
+							bg-black-custom text-[white] md:hidden flex gap-4 items-center mt-10 p-7 font-bold
+							hover:bg-gray transition duration-1000 w-full justify-center text-[15px]
+							'>
+						See All
+						<img src={arrowIcon} alt='Arrow icon' />
+					</button>
+				</Link>
 			</section>
 		</div>
 	);
