@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { Carousel, HangDown } from '../components';
+import arrowIcon from '../assets/icons/icon-arrow.svg';
 
 export const Home = () => {
 	return (
@@ -52,6 +54,42 @@ export const Home = () => {
 							alt='Welcome Image'
 						/>
 					</aside>
+				</div>
+			</section>
+
+			<section className='my-16 bg-black-custom relative'>
+				<picture className='opacity-40'>
+					<source
+						media='(min-width: 992px)'
+						srcSet={`src/assets/home/desktop/image-small-team.jpg`}
+					/>
+					<source
+						media='(min-width: 768px)'
+						srcSet={`src/assets/home/tablet/image-small-team.jpg`}
+					/>
+					<img
+						className='object-cover h-full w-full'
+						srcSet={`src/assets/home/mobile/image-small-team.jpg`}
+					/>
+				</picture>
+				<div className='absolute top-0 px-8 md:px-10 py-[12rem] lg:p-[12rem]'>
+					<h3
+						className='
+						text-[white] text-[40px] leading-[48px] tracking-[-2px] font-bold w-[80%]
+						md:text-[56px] md:leading-[56px] md:w-[70%]
+						'>
+						Small team, big ideas
+					</h3>
+					<Link to='about'>
+						<button
+							className='
+							bg-black-custom text-[white] flex gap-4 items-center mt-10 p-7 font-medium
+							hover:bg-gray transition duration-1000
+							'>
+							About Us
+							<img src={arrowIcon} alt='Arrow icon' />
+						</button>
+					</Link>
 				</div>
 			</section>
 		</div>

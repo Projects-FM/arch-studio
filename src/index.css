@@ -41,8 +41,12 @@
   transition: 1s;
 }
 
+.swiper-pagination-bullet:hover {
+  background-color: #c9cdd9;
+}
+
 .swiper-pagination-bullet-active {
   color: #fff;
-  background: #000000;
+  background-color: #000000 !important;
   /* transition: 3s ease-in; */
 }

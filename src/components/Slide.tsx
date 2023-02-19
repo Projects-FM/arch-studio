@@ -34,7 +34,11 @@ export const Slide: FC<Props> = ({ title, body, projectName }) => {
 				</h2>
 				<p className='my-5 text-[white] font-medium'>{body}</p>
 				<Link to='portfolio'>
-					<button className='bg-black-custom text-[white] flex gap-2 items-center mt-10 px-10 py-5 font-medium'>
+					<button
+						className='
+						bg-black-custom text-[white] flex gap-2 items-center mt-10 px-10 py-5 font-medium
+						hover:bg-gray transition duration-1000
+						'>
 						See Our Portfolio
 						<img src={arrowIcon} alt='Arrow icon' />
 					</button>
