@@ -1,5 +1,5 @@
 import { FC } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
 	projectName: string;
@@ -14,8 +14,14 @@ export const PortfolioCard: FC<Props> = ({
 	projectDate,
 	image,
 }) => {
+	const navigate = useNavigate();
+
+	const handleClick = () => {
+		navigate('/portfolio');
+	};
+
 	return (
-		<Link to='/portfolio'>
+		<div onClick={handleClick}>
 			<div
 				className='
 					bg-black-custom relative cursor-pointer
@@ -55,6 +61,6 @@ export const PortfolioCard: FC<Props> = ({
 					</div>
 				)}
 			</div>
-		</Link>
+		</div>
 	);
 };
