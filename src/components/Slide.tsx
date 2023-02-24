@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import arrowIcon from '../assets/icons/icon-arrow.svg';
 
@@ -9,21 +9,34 @@ interface Props {
 }
 
 export const Slide: FC<Props> = ({ title, body, projectName }) => {
+	const [desktopImage, setDesktopImage] = useState();
+	const [tabletImage, setTabletImage] = useState();
+	const [mobileImage, setMobileImage] = useState();
+
+	useEffect(() => {
+		import(`../assets/home/desktop/image-hero-${projectName}.jpg`).then(img => {
+			setDesktopImage(img.default);
+		});
+	}, [desktopImage]);
+
+	useEffect(() => {
+		import(`../assets/home/tablet/image-hero-${projectName}.jpg`).then(img => {
+			setTabletImage(img.default);
+		});
+	}, [tabletImage]);
+
+	useEffect(() => {
+		import(`../assets/home/mobile/image-hero-${projectName}.jpg`).then(img => {
+			setMobileImage(img.default);
+		});
+	}, [mobileImage]);
+
 	return (
 		<div className='h-[34rem] md:h-[45rem] bg-black-custom'>
 			<picture className='opacity-40'>
-				<source
-					media='(min-width: 992px)'
-					srcSet={`src/assets/home/desktop/image-hero-${projectName}.jpg`}
-				/>
-				<source
-					media='(min-width: 768px)'
-					srcSet={`src/assets/home/tablet/image-hero-${projectName}.jpg`}
-				/>
-				<img
-					className='object-cover h-full w-full'
-					srcSet={`src/assets/home/mobile/image-hero-${projectName}.jpg`}
-				/>
+				<source media='(min-width: 992px)' srcSet={desktopImage} />
+				<source media='(min-width: 768px)' srcSet={tabletImage} />
+				<img className='object-cover h-full w-full' srcSet={mobileImage} />
 			</picture>
 			<div className='lg:w-[80%] lg:pl-[190px] p-10 md:p-20 h-full flex flex-col justify-center absolute top-0 z-10'>
 				<h2

@@ -1,4 +1,5 @@
 import { useForm } from 'react-hook-form';
+import arrowIcon from '../assets/icons/icon-arrow.svg';
 
 export const ContactForm = () => {
 	const {
@@ -77,7 +78,7 @@ export const ContactForm = () => {
 						<span className='text-red font-bold'>Complete all the fields!</span>
 					)}
 					<button className='bg-dark-blue p-8'>
-						<img src='src/assets/icons/icon-arrow.svg' alt='' />
+						<img src={arrowIcon} alt='Arrow Icon' />
 					</button>
 				</div>
 			</form>

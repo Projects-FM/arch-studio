@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 interface Props {
 	title: string;
@@ -14,6 +14,28 @@ export const PageInformation: FC<Props> = ({
 	isCustomBlack = true,
 	opacity = 60,
 }) => {
+	const [desktopImage, setDesktopImage] = useState();
+	const [tabletImage, setTabletImage] = useState();
+	const [mobileImage, setMobileImage] = useState();
+
+	useEffect(() => {
+		import(`../assets/${title}/desktop/image-hero.jpg`).then(img => {
+			setDesktopImage(img.default);
+		});
+	}, [desktopImage]);
+
+	useEffect(() => {
+		import(`../assets/${title}/tablet/image-hero.jpg`).then(img => {
+			setTabletImage(img.default);
+		});
+	}, [tabletImage]);
+
+	useEffect(() => {
+		import(`../assets/${title}/mobile/image-hero.jpg`).then(img => {
+			setMobileImage(img.default);
+		});
+	}, [mobileImage]);
+
 	return (
 		<main className='relative'>
 			<div
@@ -22,18 +44,9 @@ export const PageInformation: FC<Props> = ({
 				} lg:bg-[white]`}>
 				<picture
 					className={`opacity-${opacity} block h-60 md:h-full lg:opacity-100 lg:w-[60%]`}>
-					<source
-						media='(min-width: 992px)'
-						srcSet={`src/assets/${title}/desktop/image-hero.jpg`}
-					/>
-					<source
-						media='(min-width: 768px)'
-						srcSet={`src/assets/${title}/tablet/image-hero.jpg`}
-					/>
-					<img
-						className='object-cover h-full w-full'
-						srcSet={`src/assets/${title}/mobile/image-hero.jpg`}
-					/>
+					<source media='(min-width: 992px)' srcSet={desktopImage} />
+					<source media='(min-width: 768px)' srcSet={tabletImage} />
+					<img className='object-cover h-full w-full' srcSet={mobileImage} />
 				</picture>
 			</div>
 			<div

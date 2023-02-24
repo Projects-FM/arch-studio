@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
@@ -15,6 +15,27 @@ export const PortfolioCard: FC<Props> = ({
 	image,
 }) => {
 	const navigate = useNavigate();
+	const [desktopImage, setDesktopImage] = useState();
+	const [tabletImage, setTabletImage] = useState();
+	const [mobileImage, setMobileImage] = useState();
+
+	useEffect(() => {
+		import(`../assets/portfolio/desktop/image-${image}.jpg`).then(img => {
+			setDesktopImage(img.default);
+		});
+	}, [desktopImage]);
+
+	useEffect(() => {
+		import(`../assets/portfolio/tablet/image-${image}.jpg`).then(img => {
+			setTabletImage(img.default);
+		});
+	}, [tabletImage]);
+
+	useEffect(() => {
+		import(`../assets/portfolio/mobile/image-${image}.jpg`).then(img => {
+			setMobileImage(img.default);
+		});
+	}, [mobileImage]);
 
 	const handleClick = () => {
 		navigate('/portfolio');
@@ -28,18 +49,9 @@ export const PortfolioCard: FC<Props> = ({
 					hover:bg-[gray] transition duration-200 ease-in
 					'>
 				<picture className='opacity-50'>
-					<source
-						media='(min-width: 992px)'
-						srcSet={`src/assets/portfolio/desktop/image-${image}.jpg`}
-					/>
-					<source
-						media='(min-width: 768px)'
-						srcSet={`src/assets/portfolio/tablet/image-${image}.jpg`}
-					/>
-					<img
-						className='object-cover h-full w-full'
-						srcSet={`src/assets/portfolio/mobile/image-${image}.jpg`}
-					/>
+					<source media='(min-width: 992px)' srcSet={desktopImage} />
+					<source media='(min-width: 768px)' srcSet={tabletImage} />
+					<img className='object-cover h-full w-full' srcSet={mobileImage} />
 				</picture>
 				<div className='absolute bottom-5 left-5 md:bottom-10 md:left-10'>
 					<h4 className='font-bold capitalize mb-2 text-[white] text-lg'>

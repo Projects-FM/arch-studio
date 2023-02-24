@@ -1,4 +1,5 @@
 import { HangDown, LeaderCard, PageInformation } from '../components';
+import imageHeritage from '../assets/about/desktop/image-heritage.jpg';
 
 export const AboutUs = () => {
 	return (
@@ -46,11 +47,7 @@ export const AboutUs = () => {
 					</p>
 				</div>
 				<div className='justify-end hidden lg:flex'>
-					<img
-						className='w-[90%]'
-						src='/src/assets/about/desktop/image-heritage.jpg'
-						alt='Heritage'
-					/>
+					<img className='w-[90%]' src={imageHeritage} alt='Heritage' />
 				</div>
 			</section>
 
