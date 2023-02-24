@@ -50,3 +50,20 @@
   background-color: #000000 !important;
   /* transition: 3s ease-in; */
 }
+
+/* Custom Popups for Markers in Map */
+.mapboxgl-popup-content {
+  border-radius: 1rem;
+  padding: 1rem 1.5rem;
+}
+
+.mapboxgl-popup-close-button {
+  color: #c3c3c3;
+  padding: 4px;
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.mapboxgl-popup-close-button:hover {
+  background-color: transparent;
+}

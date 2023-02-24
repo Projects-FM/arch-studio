@@ -51,13 +51,13 @@ export const Navbar = () => {
 				</li>
 			</ul>
 			<ul className='hidden md:flex gap-12'>
-				<li className='text-gray font-bold text-[15px] cursor-pointer'>
+				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
 					<Link to='portfolio'>Portfolio</Link>
 				</li>
-				<li className='text-gray font-bold text-[15px] cursor-pointer'>
+				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
 					<Link to='about'>About Us</Link>
 				</li>
-				<li className='text-gray font-bold text-[15px] cursor-pointer'>
+				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
 					<Link to='contact'>Contact</Link>
 				</li>
 			</ul>

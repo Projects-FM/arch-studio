@@ -15,11 +15,11 @@ export const LeaderCard: FC<Props> = ({ leaderName, leaderJob, image }) => {
 	};
 
 	return (
-		<div
-			onMouseEnter={() => toggleHovered(true)}
-			onMouseLeave={() => toggleHovered(false)}
-			className='p-8 md:p-0 lg:cursor-pointer'>
-			<div className='relative'>
+		<div className='p-8 md:p-0'>
+			<div
+				className='relative lg:cursor-pointer'
+				onMouseEnter={() => toggleHovered(true)}
+				onMouseLeave={() => toggleHovered(false)}>
 				<img
 					src={`/src/assets/about/desktop/avatar-${image}.jpg`}
 					alt={leaderName}

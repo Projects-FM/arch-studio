@@ -1,55 +1,17 @@
-import { HangDown, LeaderCard } from '../components';
+import { HangDown, LeaderCard, PageInformation } from '../components';
 
 export const AboutUs = () => {
 	return (
 		<div>
 			<HangDown pageName='About Us' />
-			<main className='relative'>
-				<div className='bg-black-custom lg:bg-[white]'>
-					<picture className='opacity-60 block h-60 md:h-full lg:opacity-100 lg:w-[60%]'>
-						<source
-							media='(min-width: 992px)'
-							srcSet={`src/assets/about/desktop/image-hero.jpg`}
-						/>
-						<source
-							media='(min-width: 768px)'
-							srcSet={`src/assets/about/tablet/image-hero.jpg`}
-						/>
-						<img
-							className='object-cover h-full w-full'
-							srcSet={`src/assets/about/mobile/image-hero.jpg`}
-						/>
-					</picture>
-				</div>
-				<div
-					className='
-					bg-[white] px-4 pb-10 pt-20 w-[90%] translate-y-[-35px]
-					md:absolute right-0 bottom-0 md:px-16 md:pt-[10rem] md:translate-y-0 md:scale-105
-					lg:w-[55%] lg:pl-[10rem] lg:pt-[10rem]
-					'>
-					<h1
-						className='
-						hidden absolute md:block text-[120px] text-right leading-[200px] tracking-[-3px]
-						top-[-20%] font-bold text-very-light-gray right-5
-						lg:text-[200px] lg:
-						'>
-						About
-					</h1>
-					<h2
-						className='
-						font-bold text-black-custom text-[40px] mb-8 leading-[48px] tracking-[-1.4px]
-						md:text-[56px] md:leading-[56px] md:tracking-[-2px] lg:mb-12
-						'>
-						Your team of professionals
-					</h2>
-					<p className='font-medium text-gray text-[15px]'>
-						Our small team of world-class professionals will work with you every
-						step of the way. Strong relationships are at the core of everything
-						we do. This extends to the relationship our projects have with their
-						surroundings.
-					</p>
-				</div>
-			</main>
+			<PageInformation
+				title='about'
+				subtitle='Your team of professionals'
+				body='Our small team of world-class professionals will work with you every
+					step of the way. Strong relationships are at the core of everything we
+					do. This extends to the relationship our projects have with their
+					surroundings.'
+			/>
 
 			<div className='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
 			<section
