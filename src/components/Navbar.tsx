@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo.svg';
-import hamburgerIcon from '../assets/icons/icon-hamburger.svg';
-import closeIcon from '../assets/icons/icon-close.svg';
+import { CloseIcon, HamburgerIcon, LogoIcon } from '../icons';
 
 export const Navbar = () => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,14 +22,11 @@ export const Navbar = () => {
 					toggleMenu();
 				}}>
 				<Link to='/'>
-					<img src={logo} alt='Logo' />
+					<LogoIcon color='#1B1D23' />
 				</Link>
 			</button>
 			<button onClick={toggleMenu} className='md:hidden'>
-				<img
-					src={isMenuOpen ? closeIcon : hamburgerIcon}
-					alt='Hamburger icon'
-				/>
+				{isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
 			</button>
 			<ul
 				className={`

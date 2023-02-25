@@ -1,5 +1,5 @@
 import { ContactForm, HangDown, MapView, PageInformation } from '../components';
-import arrowIcon from '../assets/icons/icon-arrow.svg';
+import { ArrowIcon } from '../icons';
 
 export const Contact = () => {
 	return (
@@ -44,7 +44,7 @@ export const Contact = () => {
 							<p className='text-black-custom font-medium text-[15px]'>
 								View on Map
 							</p>
-							<img src={arrowIcon} alt='Arrow Icon' />
+							<ArrowIcon color='#1B1D23' />
 						</button>
 					</div>
 
@@ -65,7 +65,7 @@ export const Contact = () => {
 							<p className='text-black-custom font-medium text-[15px]'>
 								View on Map
 							</p>
-							<img src={arrowIcon} alt='Arrow Icon' />
+							<ArrowIcon color='#1B1D23' />
 						</button>
 					</div>
 				</div>

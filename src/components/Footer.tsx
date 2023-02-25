@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
-import logo from '../assets/logo-white.svg';
-import arrowIcon from '../assets/icons/icon-arrow.svg';
+import { ArrowIcon, LogoIcon } from '../icons';
 
 export const Footer = () => {
 	return (
@@ -11,7 +10,7 @@ export const Footer = () => {
 				'>
 			<Link to='/'>
 				<div className='bg-black-custom p-7 lg:py-[5rem] lg:px-[3rem] md:py-10 translate-y-[-50px] md:translate-y-0'>
-					<img src={logo} alt='Logo' />
+					<LogoIcon color='#FFF' />
 				</div>
 			</Link>
 			<ul className='flex flex-col gap-8 md:flex-row'>
@@ -34,7 +33,7 @@ export const Footer = () => {
 					md:my-0 md:w-auto md:absolute right-[-20%]
 					'>
 				See Our Portfolio
-				<img src={arrowIcon} alt='Arrow icon' />
+				<ArrowIcon color='#FFF' />
 			</Link>
 		</footer>
 	);

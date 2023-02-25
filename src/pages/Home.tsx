@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Carousel, HangDown, PortfolioCard } from '../components';
-import arrowIcon from '../assets/icons/icon-arrow.svg';
+import { ArrowIcon } from '../icons';
 import imageWelcome from '../assets/home/desktop/image-welcome.jpg';
 import smallTeamDesktop from '../assets/home/desktop/image-small-team.jpg';
 import smallTeamTablet from '../assets/home/tablet/image-small-team.jpg';
@@ -87,7 +87,7 @@ export const Home = () => {
 							hover:bg-gray transition duration-1000
 							'>
 							About Us
-							<img src={arrowIcon} alt='Arrow icon' />
+							<ArrowIcon color='#FFF' />
 						</button>
 					</Link>
 				</div>
@@ -108,7 +108,7 @@ export const Home = () => {
 							hover:bg-gray transition duration-1000 justify-center text-[15px] px-10
 							'>
 							See All
-							<img src={arrowIcon} alt='Arrow icon' />
+							<ArrowIcon color='#FFF' />
 						</button>
 					</Link>
 				</nav>
@@ -136,7 +136,7 @@ export const Home = () => {
 							hover:bg-gray transition duration-1000 w-full justify-center text-[15px]
 							'>
 						See All
-						<img src={arrowIcon} alt='Arrow icon' />
+						<ArrowIcon color='#FFF' />
 					</button>
 				</Link>
 			</section>

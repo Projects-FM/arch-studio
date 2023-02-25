@@ -1,6 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import twitterIcon from '../assets/icons/icon-twitter.svg';
-import linkedInIcon from '../assets/icons/icon-linkedin.svg';
+import { LinkedInIcon, TwitterIcon } from '../icons';
 
 interface Props {
 	leaderName: string;
@@ -33,13 +32,13 @@ export const LeaderCard: FC<Props> = ({ leaderName, leaderJob, image }) => {
 				{isHovered && (
 					<div className='absolute bg-[#c7c7c7a8] flex items-center w-full h-full gap-6 top-0 left-0 justify-center'>
 						<a href='https://www.linkedin.com/' target='_blank'>
-							<img src={linkedInIcon} alt='LinkedIn Icon' />
+							<LinkedInIcon />
 						</a>
 						<a
 							className='flex items-center'
 							href='https://www.twitter.com/'
 							target='_blank'>
-							<img src={twitterIcon} alt='Twitter Icon' />
+							<TwitterIcon />
 						</a>
 					</div>
 				)}
@@ -48,13 +47,13 @@ export const LeaderCard: FC<Props> = ({ leaderName, leaderJob, image }) => {
 			<p className='text-gray font-medium my-2 text-[15px]'>{leaderJob}</p>
 			<div className='flex gap-6 lg:hidden'>
 				<a href='https://www.linkedin.com/' target='_blank'>
-					<img src={linkedInIcon} alt='LinkedIn Icon' />
+					<LinkedInIcon />
 				</a>
 				<a
 					className='flex items-center'
 					href='https://www.twitter.com/'
 					target='_blank'>
-					<img src={twitterIcon} alt='Twitter Icon' />
+					<TwitterIcon />
 				</a>
 			</div>
 		</div>

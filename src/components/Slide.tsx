@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import arrowIcon from '../assets/icons/icon-arrow.svg';
+import { ArrowIcon } from '../icons';
 
 interface Props {
 	title: string;
@@ -53,7 +53,7 @@ export const Slide: FC<Props> = ({ title, body, projectName }) => {
 						hover:bg-gray transition duration-1000
 						'>
 						See Our Portfolio
-						<img src={arrowIcon} alt='Arrow icon' />
+						<ArrowIcon color='#FFF' />
 					</button>
 				</Link>
 			</div>
