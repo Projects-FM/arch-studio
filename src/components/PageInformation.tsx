@@ -1,9 +1,12 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 
 interface Props {
 	title: string;
 	subtitle: string;
 	body: string;
+	desktopImage: string;
+	tabletImage: string;
+	mobileImage: string;
 	isCustomBlack?: boolean;
 	opacity?: number;
 }
@@ -11,31 +14,12 @@ export const PageInformation: FC<Props> = ({
 	title,
 	subtitle,
 	body,
+	desktopImage,
+	tabletImage,
+	mobileImage,
 	isCustomBlack = true,
 	opacity = 60,
 }) => {
-	const [desktopImage, setDesktopImage] = useState();
-	const [tabletImage, setTabletImage] = useState();
-	const [mobileImage, setMobileImage] = useState();
-
-	useEffect(() => {
-		import(`../assets/${title}/desktop/image-hero.jpg`).then(img => {
-			setDesktopImage(img.default);
-		});
-	}, [desktopImage]);
-
-	useEffect(() => {
-		import(`../assets/${title}/tablet/image-hero.jpg`).then(img => {
-			setTabletImage(img.default);
-		});
-	}, [tabletImage]);
-
-	useEffect(() => {
-		import(`../assets/${title}/mobile/image-hero.jpg`).then(img => {
-			setMobileImage(img.default);
-		});
-	}, [mobileImage]);
-
 	return (
 		<main className='relative'>
 			<div

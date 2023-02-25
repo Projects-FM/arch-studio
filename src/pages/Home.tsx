@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom';
 import { Carousel, HangDown, PortfolioCard } from '../components';
 import { ArrowIcon } from '../icons';
-import imageWelcome from '../assets/home/desktop/image-welcome.jpg';
-import smallTeamDesktop from '../assets/home/desktop/image-small-team.jpg';
-import smallTeamTablet from '../assets/home/tablet/image-small-team.jpg';
-import smallTeamMobile from '../assets/home/mobile/image-small-team.jpg';
+import welcomeImage from '../assets/home/desktop/image-welcome.jpg';
+import smallTeamDesktopImage from '../assets/home/desktop/image-small-team.jpg';
+import smallTeamTabletImage from '../assets/home/tablet/image-small-team.jpg';
+import smallTeamMobileImage from '../assets/home/mobile/image-small-team.jpg';
+import delSolDesktopImage from '../assets/portfolio/desktop/image-del-sol.jpg';
+import delSolTabletImage from '../assets/portfolio/tablet/image-del-sol.jpg';
+import delSolMobileImage from '../assets/portfolio/mobile/image-del-sol.jpg';
+import b228DesktopImage from '../assets/portfolio/desktop/image-228b.jpg';
+import b228TabletImage from '../assets/portfolio/tablet/image-228b.jpg';
+import b228MobileImage from '../assets/portfolio/mobile/image-228b.jpg';
+import prototypeDesktopImage from '../assets/portfolio/desktop/image-prototype.jpg';
+import prototypeTabletImage from '../assets/portfolio/tablet/image-prototype.jpg';
+import prototypeMobileImage from '../assets/portfolio/mobile/image-prototype.jpg';
 
 export const Home = () => {
 	return (
@@ -54,22 +63,20 @@ export const Home = () => {
 					<aside className='hidden lg:block'>
 						<img
 							className='w-full h-full object-cover'
-							src={imageWelcome}
+							src={welcomeImage}
 							alt='Welcome Image'
 						/>
 					</aside>
 				</div>
 			</section>
 
-			{/* TODO: REFACTOR IMAGES */}
-
 			<section className='my-16 bg-black-custom relative'>
 				<picture className='opacity-40'>
-					<source media='(min-width: 992px)' srcSet={smallTeamDesktop} />
-					<source media='(min-width: 768px)' srcSet={smallTeamTablet} />
+					<source media='(min-width: 992px)' srcSet={smallTeamDesktopImage} />
+					<source media='(min-width: 768px)' srcSet={smallTeamTabletImage} />
 					<img
 						className='object-cover h-full w-full'
-						srcSet={smallTeamMobile}
+						srcSet={smallTeamMobileImage}
 					/>
 				</picture>
 				<div className='absolute top-0 px-8 md:px-10 py-[12rem] lg:p-[12rem]'>
@@ -116,17 +123,23 @@ export const Home = () => {
 					<PortfolioCard
 						projectName='Project del Sol'
 						projectNumber={1}
-						image='del-sol'
+						desktopImage={delSolDesktopImage}
+						tabletImage={delSolTabletImage}
+						mobileImage={delSolMobileImage}
 					/>
 					<PortfolioCard
 						projectName='228B Tower'
 						projectNumber={2}
-						image='228b'
+						desktopImage={b228DesktopImage}
+						tabletImage={b228TabletImage}
+						mobileImage={b228MobileImage}
 					/>
 					<PortfolioCard
 						projectName='Le Prototype'
 						projectNumber={3}
-						image='prototype'
+						desktopImage={prototypeDesktopImage}
+						tabletImage={prototypeTabletImage}
+						mobileImage={prototypeMobileImage}
 					/>
 				</div>
 				<Link to='portfolio'>

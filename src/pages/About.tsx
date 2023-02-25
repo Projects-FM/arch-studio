@@ -1,7 +1,10 @@
 import { HangDown, LeaderCard, PageInformation } from '../components';
-import imageHeritage from '../assets/about/desktop/image-heritage.jpg';
+import heritageImage from '../assets/about/desktop/image-heritage.jpg';
+import heroDesktopImage from '../assets/about/desktop/image-hero.jpg';
+import heroTabletImage from '../assets/about/tablet/image-hero.jpg';
+import heroMobileImage from '../assets/about/mobile/image-hero.jpg';
 
-export const AboutUs = () => {
+export const About = () => {
 	return (
 		<div>
 			<HangDown pageName='About Us' />
@@ -12,6 +15,9 @@ export const AboutUs = () => {
 					step of the way. Strong relationships are at the core of everything we
 					do. This extends to the relationship our projects have with their
 					surroundings.'
+				desktopImage={heroDesktopImage}
+				tabletImage={heroTabletImage}
+				mobileImage={heroMobileImage}
 			/>
 
 			<div className='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
@@ -47,7 +53,7 @@ export const AboutUs = () => {
 					</p>
 				</div>
 				<div className='justify-end hidden lg:flex'>
-					<img className='w-[90%]' src={imageHeritage} alt='Heritage' />
+					<img className='w-[90%]' src={heritageImage} alt='Heritage' />
 				</div>
 			</section>
 

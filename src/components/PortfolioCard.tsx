@@ -1,9 +1,11 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
 interface Props {
 	projectName: string;
-	image: string;
+	desktopImage: string;
+	tabletImage: string;
+	mobileImage: string;
 	projectNumber?: number;
 	projectDate?: string;
 }
@@ -12,30 +14,11 @@ export const PortfolioCard: FC<Props> = ({
 	projectName,
 	projectNumber,
 	projectDate,
-	image,
+	desktopImage,
+	tabletImage,
+	mobileImage,
 }) => {
 	const navigate = useNavigate();
-	const [desktopImage, setDesktopImage] = useState();
-	const [tabletImage, setTabletImage] = useState();
-	const [mobileImage, setMobileImage] = useState();
-
-	useEffect(() => {
-		import(`../assets/portfolio/desktop/image-${image}.jpg`).then(img => {
-			setDesktopImage(img.default);
-		});
-	}, [desktopImage]);
-
-	useEffect(() => {
-		import(`../assets/portfolio/tablet/image-${image}.jpg`).then(img => {
-			setTabletImage(img.default);
-		});
-	}, [tabletImage]);
-
-	useEffect(() => {
-		import(`../assets/portfolio/mobile/image-${image}.jpg`).then(img => {
-			setMobileImage(img.default);
-		});
-	}, [mobileImage]);
 
 	const handleClick = () => {
 		navigate('/portfolio');

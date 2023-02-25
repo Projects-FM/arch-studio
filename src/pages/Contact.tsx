@@ -1,5 +1,8 @@
 import { ContactForm, HangDown, MapView, PageInformation } from '../components';
 import { ArrowIcon } from '../icons';
+import heroDesktopImage from '../assets/contact/desktop/image-hero.jpg';
+import heroTabletImage from '../assets/contact/tablet/image-hero.jpg';
+import heroMobileImage from '../assets/contact/mobile/image-hero.jpg';
 
 export const Contact = () => {
 	return (
@@ -14,6 +17,9 @@ export const Contact = () => {
 				yourself nearby, come say hello!'
 				isCustomBlack={false}
 				opacity={40}
+				desktopImage={heroDesktopImage}
+				tabletImage={heroTabletImage}
+				mobileImage={heroMobileImage}
 			/>
 			<div className='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
 			<section className='px-4 py-10 md:px-0'>

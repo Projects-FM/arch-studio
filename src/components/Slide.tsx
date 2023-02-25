@@ -1,36 +1,22 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowIcon } from '../icons';
 
 interface Props {
 	title: string;
 	body: string;
-	projectName: string;
+	desktopImage: string;
+	tabletImage: string;
+	mobileImage: string;
 }
 
-export const Slide: FC<Props> = ({ title, body, projectName }) => {
-	const [desktopImage, setDesktopImage] = useState();
-	const [tabletImage, setTabletImage] = useState();
-	const [mobileImage, setMobileImage] = useState();
-
-	useEffect(() => {
-		import(`../assets/home/desktop/image-hero-${projectName}.jpg`).then(img => {
-			setDesktopImage(img.default);
-		});
-	}, [desktopImage]);
-
-	useEffect(() => {
-		import(`../assets/home/tablet/image-hero-${projectName}.jpg`).then(img => {
-			setTabletImage(img.default);
-		});
-	}, [tabletImage]);
-
-	useEffect(() => {
-		import(`../assets/home/mobile/image-hero-${projectName}.jpg`).then(img => {
-			setMobileImage(img.default);
-		});
-	}, [mobileImage]);
-
+export const Slide: FC<Props> = ({
+	title,
+	body,
+	desktopImage,
+	tabletImage,
+	mobileImage,
+}) => {
 	return (
 		<div className='h-[34rem] md:h-[45rem] bg-black-custom'>
 			<picture className='opacity-40'>
