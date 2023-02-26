@@ -19,10 +19,12 @@ export const Home = () => {
 	return (
 		<div>
 			<HangDown pageName='Home' />
-			<main>
+			<main data-aos='fade-right'>
 				<Carousel />
 			</main>
-			<section className='px-10 md:px-0 py-[7rem] md:py-16 relative lg:mt-[10rem]'>
+			<section
+				data-aos='fade-up'
+				className='px-10 md:px-0 py-[7rem] md:py-16 relative lg:mt-[10rem]'>
 				<h2
 					className='
 						hidden font-bold text-[120px] leading-[200px] tracking-[-3px] text-[#f0f0f5] text-center
@@ -70,7 +72,7 @@ export const Home = () => {
 				</div>
 			</section>
 
-			<section className='my-16 bg-black-custom relative'>
+			<section data-aos='fade-down' className='my-16 bg-black-custom relative'>
 				<picture className='opacity-40'>
 					<source media='(min-width: 992px)' srcSet={smallTeamDesktopImage} />
 					<source media='(min-width: 768px)' srcSet={smallTeamTabletImage} />
@@ -103,6 +105,7 @@ export const Home = () => {
 			<section className='px-12 md:p-0'>
 				<nav className='flex justify-between items-center mt-5 mb-10 md:mb-[5rem] md:mt-[10rem]'>
 					<h3
+						data-aos='fade-left'
 						className='font-bold text-black-custom text-[40px] tracking-[-1.4px]
 						md:text-[56px] md:tracking-[-2px]
 					'>
@@ -110,6 +113,7 @@ export const Home = () => {
 					</h3>
 					<Link to='portfolio'>
 						<button
+							data-aos='fade-right'
 							className='
 							bg-black-custom text-[white] hidden md:flex gap-4 items-center py-6 font-medium
 							hover:bg-gray transition duration-1000 justify-center text-[15px] px-10
@@ -121,6 +125,7 @@ export const Home = () => {
 				</nav>
 				<div className='grid lg:grid-cols-3 gap-8'>
 					<PortfolioCard
+						effect={'flip-right'}
 						projectName='Project del Sol'
 						projectNumber={1}
 						desktopImage={delSolDesktopImage}
@@ -128,6 +133,7 @@ export const Home = () => {
 						mobileImage={delSolMobileImage}
 					/>
 					<PortfolioCard
+						effect={'flip-right'}
 						projectName='228B Tower'
 						projectNumber={2}
 						desktopImage={b228DesktopImage}
@@ -135,6 +141,7 @@ export const Home = () => {
 						mobileImage={b228MobileImage}
 					/>
 					<PortfolioCard
+						effect={'flip-right'}
 						projectName='Le Prototype'
 						projectNumber={3}
 						desktopImage={prototypeDesktopImage}
@@ -144,6 +151,7 @@ export const Home = () => {
 				</div>
 				<Link to='portfolio'>
 					<button
+						data-aos='fade-up'
 						className='
 							bg-black-custom text-[white] md:hidden flex gap-4 items-center mt-10 p-7 font-bold
 							hover:bg-gray transition duration-1000 w-full justify-center text-[15px]

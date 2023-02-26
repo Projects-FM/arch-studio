@@ -55,5 +55,11 @@ export const MapView = () => {
 		);
 	});
 
-	return <div ref={mapContainer} className='h-[600px] my-[10rem]' />;
+	return (
+		<div
+			data-aos='zoom-out'
+			ref={mapContainer}
+			className='h-[600px] my-[10rem]'
+		/>
+	);
 };

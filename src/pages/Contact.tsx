@@ -22,7 +22,7 @@ export const Contact = () => {
 				mobileImage={heroMobileImage}
 			/>
 			<div className='hidden md:block w-16 h-px bg-light-gray mt-[12rem]'></div>
-			<section className='px-4 py-10 md:px-0'>
+			<section data-aos='zoom-out' className='px-4 py-10 md:px-0'>
 				<div className='flex flex-col gap-8 lg:flex-row lg:justify-center lg:gap-[6rem] lg:mt-[5rem]'>
 					<h2
 						className='

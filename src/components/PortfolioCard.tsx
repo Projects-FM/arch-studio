@@ -6,6 +6,7 @@ interface Props {
 	desktopImage: string;
 	tabletImage: string;
 	mobileImage: string;
+	effect: string;
 	projectNumber?: number;
 	projectDate?: string;
 }
@@ -14,6 +15,7 @@ export const PortfolioCard: FC<Props> = ({
 	projectName,
 	projectNumber,
 	projectDate,
+	effect,
 	desktopImage,
 	tabletImage,
 	mobileImage,
@@ -25,7 +27,7 @@ export const PortfolioCard: FC<Props> = ({
 	};
 
 	return (
-		<div onClick={handleClick}>
+		<div data-aos={effect} onClick={handleClick}>
 			<div
 				className='
 					bg-black-custom relative cursor-pointer

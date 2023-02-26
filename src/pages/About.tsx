@@ -26,7 +26,7 @@ export const About = () => {
 					px-4 py-10 md:px-0 grid lg:grid-cols-[40%_55%] gap-5
 					lg:py-0
 				'>
-				<div>
+				<div data-aos='fade-right'>
 					<h2
 						className='
 						text-black-custom font-bold text-[40px] leading-[48px] tracking-[-1.2px] my-[3rem]
@@ -52,13 +52,14 @@ export const About = () => {
 						project.
 					</p>
 				</div>
-				<div className='justify-end hidden lg:flex'>
+				<div data-aos='fade-left' className='justify-end hidden lg:flex'>
 					<img className='w-[90%]' src={heritageImage} alt='Heritage' />
 				</div>
 			</section>
 
 			<section className='px-4 py-10 md:px-0 lg:grid grid-cols-[33%_66%] md:my-[8rem]'>
 				<h2
+					data-aos='fade-left'
 					className='
 						text-black-custom font-bold text-[40px] leading-[48px] tracking-[-1.2px] mb-[3rem]
 						md:text-[56px] md:leading-[56px]

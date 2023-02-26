@@ -23,7 +23,7 @@ export const LeaderCard: FC<Props> = ({ leaderName, leaderJob, image }) => {
 	};
 
 	return (
-		<div className='p-8 md:p-0'>
+		<div data-aos='fade-left' className='p-8 md:p-0'>
 			<div
 				className='relative lg:cursor-pointer'
 				onMouseEnter={() => toggleHovered(true)}

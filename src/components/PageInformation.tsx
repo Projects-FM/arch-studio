@@ -23,6 +23,7 @@ export const PageInformation: FC<Props> = ({
 	return (
 		<main className='relative'>
 			<div
+				data-aos='fade-right'
 				className={`${
 					isCustomBlack ? 'bg-black-custom' : 'bg-[black]'
 				} lg:bg-[white]`}>
@@ -34,6 +35,7 @@ export const PageInformation: FC<Props> = ({
 				</picture>
 			</div>
 			<div
+				data-aos='fade-right'
 				className='
 					bg-[white] px-4 pb-10 pt-20 w-[90%] translate-y-[-35px]
 					md:absolute right-0 bottom-0 md:px-16 md:pt-[10rem] md:translate-y-0 md:scale-105

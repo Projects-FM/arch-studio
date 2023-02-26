@@ -24,18 +24,20 @@ export const ContactForm = () => {
 	return (
 		<section className='px-4 py-10 md:px-0 lg:grid lg:grid-cols-[30%_70%] gap-5'>
 			<h2
+				data-aos='fade-right'
 				className='
 						text-black-custom font-bold text-[40px] leading-[48px] tracking-[-1.2px] mt-[3rem] mb-4
 						md:text-[56px] md:leading-[56px] md:mt-[3rem] lg:mt-0
 					'>
 				Connect with us
 			</h2>
-			<form onSubmit={handleSubmit(onSubmit)}>
+			<form data-aos='fade-left' onSubmit={handleSubmit(onSubmit)}>
 				<input
-					className='
+					className={`
             w-full my-5 px-5 py-3 font-bold outline-none border-b border-b-black-custom
-            placeholder:font-bold placeholder:text-dark-gray text-xl
-            '
+            placeholder:font-bold placeholder:text-dark-gray text-xl 
+						${errors.name && 'placeholder:text-red text-red border-b-red'}
+            `}
 					type='text'
 					placeholder='Name'
 					{...register('name', {
@@ -44,10 +46,11 @@ export const ContactForm = () => {
 					})}
 				/>
 				<input
-					className='
+					className={`
             w-full my-5 px-5 py-3 font-bold outline-none border-b border-b-black-custom
-            placeholder:font-bold placeholder:text-dark-gray text-xl
-            '
+            placeholder:font-bold placeholder:text-dark-gray text-xl 
+						${errors.email && 'placeholder:text-red text-red border-b-red'}
+            `}
 					type='text'
 					placeholder='Email Address'
 					{...register('email', {
@@ -59,15 +62,17 @@ export const ContactForm = () => {
 					})}
 				/>
 				<textarea
-					className='
+					className={`
             w-full my-5 px-5 py-3 font-bold outline-none border-b border-b-black-custom
             placeholder:font-bold placeholder:text-dark-gray text-xl
-            max-h-[8rem]
-            '
+            max-h-[8rem] 
+						${errors.message && 'placeholder:text-red text-red border-b-red'}
+            `}
 					placeholder='Your Message'
 					rows={1}
 					{...register('message', {
 						required: true,
+						minLength: 5,
 					})}
 				/>
 				<div

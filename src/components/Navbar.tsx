@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { CloseIcon, HamburgerIcon, LogoIcon } from '../icons';
 
 export const Navbar = () => {
@@ -16,15 +16,15 @@ export const Navbar = () => {
 			md:py-14 md:px-20 md:gap-[6rem] md:justify-start
 			lg:py-14 xl:px-0
 		'>
-			<button
+			<NavLink
+				to='/'
+				data-aos='fade-right'
 				onClick={() => {
 					if (!isMenuOpen) return;
 					toggleMenu();
 				}}>
-				<Link to='/'>
-					<LogoIcon color='#1B1D23' />
-				</Link>
-			</button>
+				<LogoIcon color='#1B1D23' />
+			</NavLink>
 			<button onClick={toggleMenu} className='md:hidden'>
 				{isMenuOpen ? <CloseIcon /> : <HamburgerIcon />}
 			</button>
@@ -36,24 +36,42 @@ export const Navbar = () => {
 				text-lg md:hidden z-10
 			`}>
 				<li onClick={toggleMenu} className='cursor-pointer'>
-					<Link to='portfolio'>Portfolio</Link>
+					<NavLink to='portfolio'>Portfolio</NavLink>
 				</li>
 				<li onClick={toggleMenu} className='cursor-pointer'>
-					<Link to='about'>About Us</Link>
+					<NavLink to='about'>About Us</NavLink>
 				</li>
 				<li onClick={toggleMenu} className='cursor-pointer'>
-					<Link to='contact'>Contact</Link>
+					<NavLink to='contact'>Contact</NavLink>
 				</li>
 			</ul>
-			<ul className='hidden md:flex gap-12'>
+			<ul data-aos='fade-right' className='hidden md:flex gap-12'>
 				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
-					<Link to='portfolio'>Portfolio</Link>
+					<NavLink
+						to='portfolio'
+						className={({ isActive }) =>
+							isActive ? 'text-black-custom' : undefined
+						}>
+						Portfolio
+					</NavLink>
 				</li>
 				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
-					<Link to='about'>About Us</Link>
+					<NavLink
+						to='about'
+						className={({ isActive }) =>
+							isActive ? 'text-black-custom' : undefined
+						}>
+						About Us
+					</NavLink>
 				</li>
 				<li className='text-gray font-bold text-[15px] cursor-pointer hover:text-black-custom transition-colors duration-500 ease-out'>
-					<Link to='contact'>Contact</Link>
+					<NavLink
+						to='contact'
+						className={({ isActive }) =>
+							isActive ? 'text-black-custom' : undefined
+						}>
+						Contact
+					</NavLink>
 				</li>
 			</ul>
 		</nav>
